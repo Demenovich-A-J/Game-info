@@ -4,16 +4,16 @@ var url = require("url");
 var GameInfoLoader = new gamesInfoLoader.GamesInfoLoader();
 
 function loadGameInfoById(request, response) {
-  var urlParsed = url.parse(request.url,true);
-  GameInfoLoader.LoadGameInfoById(urlParsed.query.appid,function (params) {
-    response.end(params);
-  });
+		var urlParsed = url.parse(request.url,true);
+		GameInfoLoader.LoadGameInfoById(urlParsed.query.appid,function (params) {
+		response.end(params);
+	});
 }
 
 function loadAllGamesInfo(request,response) {
-  GameInfoLoader.LoadAllGamesInfo(function (params) {
-    response.end(params);
-  });
+		GameInfoLoader.LoadAllGamesInfo(function (params) {
+		response.end(params);
+	});
 }
 
 exports.LoadGameInfoById = loadGameInfoById;
