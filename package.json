@@ -1,0 +1,30 @@
+{
+        "name": "game-info",
+        "version": "1.0.0",
+        "description": "1. Simple server without any packages.\r 2. Simple server on Express.",
+        "main": "app.js",
+        "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "start": "node app.js"
+        },
+        "repository": {
+                "type": "git",
+                "url": "git+https://demenovich-a-j@github.com/Demenovich-A-J/Game-info.git"
+        },
+        "author": [
+                {
+                        "name": "Demenovich A"
+                },
+                {
+                        "name": "Lavrinovich K."
+                }
+        ],
+        "license": "ISC",
+        "bugs": {
+                "url": "https://github.com/Demenovich-A-J/Game-info/issues"
+        },
+        "homepage": "https://github.com/Demenovich-A-J/Game-info#readme",
+        "dependencies": {
+                "express": "^4.13.4"
+        }
+}
