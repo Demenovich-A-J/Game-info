@@ -5,3 +5,5 @@ var app = express();
 app.use('/', router);
 
 app.listen(8888);
+
+module.exports = app;
