@@ -28,7 +28,6 @@ GamesInfoLoader.prototype.LoadGameInfoById = function(appId, callback) {
 
 GamesInfoLoader.prototype.LoadAllGamesInfo = function(callback) {
     var path = this.AllGamesUrl;
-    console.log(path);
     this.Load(path, callback);
 };
 
