@@ -1,35 +1,37 @@
 {
-        "name": "game-info",
-        "version": "1.0.0",
-        "description": "1. Simple server without any packages.\r 2. Simple server on Express.",
-        "main": "app.js",
-        "scripts": {
-                "test": "echo \"Error: no test specified\" && exit 1",
-                "start": "node app.js"
-        },
-        "repository": {
-                "type": "git",
-                "url": "git+https://demenovich-a-j@github.com/Demenovich-A-J/Game-info.git"
-        },
-        "author": [
-                {
-                        "name": "Demenovich A"
-                },
-                {
-                        "name": "Lavrinovich K."
-                }
-        ],
-        "license": "ISC",
-        "bugs": {
-                "url": "https://github.com/Demenovich-A-J/Game-info/issues"
-        },
-        "homepage": "https://github.com/Demenovich-A-J/Game-info#readme",
-        "dependencies": {
-                "express": "^4.13.4"
-        },
-        "devDependencies": {
-                "supertest": "^1.2.0",
-                "nock": "^7.7.2",
-                "chai": "^3.5.0"
-        }
+  "name": "game-info",
+  "version": "1.0.0",
+  "description": "1. Simple server without any packages.\r 2. Simple server on Express.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://demenovich-a-j@github.com/Demenovich-A-J/Game-info.git"
+  },
+  "author": [
+    {
+      "name": "Demenovich A"
+    },
+    {
+      "name": "Lavrinovich K."
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Demenovich-A-J/Game-info/issues"
+  },
+  "homepage": "https://github.com/Demenovich-A-J/Game-info#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.11",
+    "mongoose": "^4.4.10"
+  },
+  "devDependencies": {
+    "supertest": "^1.2.0",
+    "nock": "^7.7.2",
+    "chai": "^3.5.0"
+  }
 }

@@ -1,5 +1,4 @@
 var http = require("http");
-var StringDecoder = require("string_decoder").StringDecoder;
 
 function GamesInfoLoader() {
     this.GameInfoUrl = 'http://store.steampowered.com/api/appdetails';
