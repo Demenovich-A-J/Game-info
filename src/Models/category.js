@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 module.exports = function() {
     var categoryShema = new Schema({
-        _id: Number,
         categoryId: String,
         description: String,
         _gameInfo : {

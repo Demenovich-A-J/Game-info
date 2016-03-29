@@ -7,14 +7,14 @@ module.exports = function() {
             type: String,
             required: true
         },
-        appId: {
+        appid: {
             type: String,
             required: true
         },
         gameInfo : {
             type: Schema.Types.ObjectId,
-            ref: 'gameInfo'
+            ref: 'GameInfo'
         }
     });
-    mongoose.model("Game", gameShema);
+    mongoose.model('Game', gameShema);
 };

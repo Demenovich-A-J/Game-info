@@ -1,4 +1,4 @@
-var models = ['./Models/game', './Models/game-info'];
+var models = ['./Models/game', './Models/game-info', './Models/genre', './Models/movie', './Models/category', './Models/screenshot'];
 
 exports.initialize = function() {
     var l = models.length;

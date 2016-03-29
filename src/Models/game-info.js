@@ -1,15 +1,12 @@
 var Movie = require('./movie');
 var Genre = require('./genre');
 var Screenshot = require('./screenshot');
-require('./category')();
-//require('screenshot');
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 module.exports = function() {
     var gameInfoSheme = new Schema({
-        _id: Number,
         appid: String,
         type: String,
         name: String,

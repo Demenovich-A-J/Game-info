@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 module.exports = function() {
     var movieShema = new Schema({
-        _id: Number,
         movieId: String,
         name: String,
         thumbnail: String,
