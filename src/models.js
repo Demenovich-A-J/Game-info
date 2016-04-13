@@ -1,8 +1,9 @@
-var models = ['./Models/game', './Models/game-info', './Models/genre', './Models/movie', './Models/category', './Models/screenshot'];
+var mongoose = require('mongoose');
+var models = ['./Models/game-info', './Models/genre', './Models/movie', './Models/category', './Models/screenshot'];
 
 exports.initialize = function() {
     var l = models.length;
     for (var i = 0; i < l; i++) {
-        require(models[i])();
+        require(models[i])(mongoose);
     }
 };

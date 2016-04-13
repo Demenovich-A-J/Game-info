@@ -2,11 +2,8 @@ var Movie = require('./movie');
 var Genre = require('./genre');
 var Screenshot = require('./screenshot');
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-module.exports = function() {
-    var gameInfoSheme = new Schema({
+module.exports = function(mongoose) {
+    var gameInfoSheme = new mongoose.Schema({
         appid: String,
         type: String,
         name: String,
@@ -86,25 +83,25 @@ module.exports = function() {
         },
         categories: [
             {
-                type: Schema.Types.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 ref: 'category'
             }
         ],
         genres: [
             {
-                type: Schema.Types.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 ref: 'genre'
             }
         ],
         screenshots: [
             {
-                type: Schema.Types.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 ref: 'screenshoot'
             }
         ],
         movies: [
             {
-                type: Schema.Types.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 ref: 'movie'
             }
         ],

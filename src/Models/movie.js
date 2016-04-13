@@ -1,8 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-module.exports = function() {
-    var movieShema = new Schema({
+module.exports = function(mongoose) {
+    var movieShema = new mongoose.Schema({
         movieId: String,
         name: String,
         thumbnail: String,
@@ -15,5 +12,4 @@ module.exports = function() {
         }
     });
     mongoose.model("Movie", movieShema);
-
 };

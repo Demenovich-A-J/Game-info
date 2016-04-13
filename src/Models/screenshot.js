@@ -1,9 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-module.exports = function() {
-    var screenshotSchema = new Schema({
-        _id: Number,
+module.exports = function(mongoose) {
+    var screenshotSchema = new mongoose.Schema({
         path_thumbnail: String,
         path_full: String,
         _gameInfo : {

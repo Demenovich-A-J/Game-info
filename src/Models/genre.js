@@ -1,8 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-module.exports = function() {
-    var genreSchema = new Schema({
+module.exports = function(mongoose) {
+    var genreSchema = new mongoose.Schema({
         _id: Number,
         genreId: Number,
         description: String,
