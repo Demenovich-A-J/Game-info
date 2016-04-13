@@ -1,20 +1,24 @@
 var express = require('express');
 var router = require('./router');
 var dbConnection = require('./data-base-connector');
-require('./models').initialize();
-var Game = dbConnection.model('Game');
-var GameInfo = dbConnection.model('GameInfo');
-var Movie = dbConnection.model('Movie');
-var Category = dbConnection.model('Category');
-var Genre = dbConnection.model('Genre');
-var Screenshot = dbConnection.model('Screenshot');
-var gameLoader = require('./GameLoader');
-var GameLoader = new gameLoader.GamesInfoLoader();
+var Core = require('./GameManager/core');
 
 var app = express();
 app.use('/', router);
+
 console.log("step1");
+
+var CronJob = require('cron').CronJob;
+
+var job = new CronJob(new Date(), function() {
+    console.log("start");
+  }, function () {
+      Core.FillDb();
+  },
+  false,
+  'America/Los_Angeles'
+);
+job.start();
 
 
 app.listen(8888);
-job.start();

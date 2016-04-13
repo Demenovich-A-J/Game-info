@@ -30,4 +30,5 @@ GamesInfoLoader.prototype.LoadAllGamesInfo = function(callback) {
     this.Load(path, callback);
 };
 
-exports.GamesInfoLoader = GamesInfoLoader;
+//exports.GamesInfoLoader = GamesInfoLoader;
+module.exports = new GamesInfoLoader();

@@ -1,7 +1,6 @@
 var express = require('express');
-var gameLoader = require('./GameLoader');
+var GameLoader = require('./GameLoader');
 var router = express.Router();
-var GameLoader = new gameLoader.GamesInfoLoader();
 
 router.get('/AllGames', function(request, response){
 	GameLoader.LoadAllGamesInfo(function(params){
@@ -14,7 +13,5 @@ router.get('/GameInfo', function(request, response){
 		response.json(JSON.parse(params));
 	});
 });
-
-
 
 module.exports = router;
