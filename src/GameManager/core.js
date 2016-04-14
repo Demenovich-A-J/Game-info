@@ -1,15 +1,21 @@
 var http = require("http");
-//var mapper = require('../Mapper/modelmapper');
+var Mapper = require('../Mapper/modelmapper');
 var dbConnection = require('../data-base-connector');
 var GameLoader = require('../GameLoader');
 var GameParser = require('./gameParser');
 var Scheduler = require('./scheduler');
+
 var Core = function() {
 }
 
-var GameInfo = dbConnection.model('GameInfo');
+var GameInfo = require('../Models/game-info');
+var Category = require('../Models/category');
+var Genre = require('../Models/genre');
+var Movie = require('../Models/movie');
+var Screenshot = require('../Models/screenshot');
 
 Core.prototype.FillDb = function() {
+
     GameLoader.LoadAllGamesInfo(this.ProcessGamesResponse);
 }
 
@@ -24,16 +30,25 @@ Core.prototype.ProcessGamesResponse = function  (object){
 function proccesGameInfo(id) {
     console.log(id);
     GameLoader.LoadGameInfoById(id, function(params) {
-        var gameInfo = GameParser.ParseGameInfo(params,id);
-        saveToDbmodel(gameInfo);
+        GameParser.ParseGameInfo(params,id, saveToDbmodel);
     });
 }
 
 function saveToDbmodel(jsonObject) {
-    console.log(jsonObject.success)
-    if(jsonObject.success)
-    {
-        console.log(jsonObject.data.genres);
+    console.log(jsonObject.success);
+    if(jsonObject != null){
+        if(jsonObject.success){
+            var genreList = [];
+            for (var i = 0; i < jsonObject.data.genres.length; i++) {
+                var genre = Mapper.MappGenre(jsonObject.data.genres[i]);
+
+                genre.save(function (err, genre) {
+                  if (err) return console.error(err);
+                });
+                genreList.push(genre);
+            }
+            console.log(genreList);
+        }
     }
 }
 

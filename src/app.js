@@ -1,6 +1,6 @@
 var express = require('express');
 var router = require('./router');
-var dbConnection = require('./data-base-connector');
+//var dbConnection = require('./data-base-connector');
 var Core = require('./GameManager/core');
 
 var app = express();
