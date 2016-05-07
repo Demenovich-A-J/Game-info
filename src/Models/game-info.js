@@ -59,7 +59,7 @@ var gameInfo = new Schema({
         required: false
     },
     price_overview: {
-        currency: Number,
+        currency: String,
         initial: Number,
         final: Number,
         discount_percent: Number
@@ -121,11 +121,7 @@ var gameInfo = new Schema({
         url: String,
         email: String
     },
-    background: String,
-    _game : {
-        type: Number,
-        ref: 'Game'
-    }
+    background: String
 });
 
 var GameInfo = mongoose.model('GameInfo', gameInfo);

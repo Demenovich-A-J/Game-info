@@ -10,41 +10,41 @@ ModelMapper.prototype.MappGameInfo = function(item) {
     var gameInfo = new GameInfo(
         {
             appid: item.appid,
-            type: item.type,
-            name: item.name,
-            steam_appid: item.steam_appid,
-            required_age: item.required_age,
-            is_free: item.is_free,
-            dlc: item.dlc,
-            detailed_description: item.detailed_description,
-            about_the_game: item.about_the_game,
-            supported_languages: item.supported_languages,
-            header_image: item.header_image,
-            website: item.website,
+            type: item.data.type,
+            name: item.data.name,
+            steam_appid: item.data.steam_appid,
+            required_age: item.data.required_age,
+            is_free: item.data.is_free,
+            dlc: item.data.dlc,
+            detailed_description: item.data.detailed_description,
+            about_the_game: item.data.about_the_game,
+            supported_languages: item.data.supported_languages,
+            header_image: item.data.header_image,
+            website: item.data.website,
             pc_requirements: {
-                minimum: item.pc_requirements.minimum,
-                recommended: item.pc_requirements.recommended
+                minimum: item.data.pc_requirements.minimum,
+                recommended: item.data.pc_requirements.recommended
             },
             mac_requirements: {
-                minimum: item.mac_requirements.minimum,
-                recommended: item.mac_requirements.recommended
+                minimum: item.data.mac_requirements.minimum,
+                recommended: item.data.mac_requirements.recommended
             },
             linux_requirements: {
-                minimum: item.linux_requirements.minimum,
-                recommended: item.linux_requirements.recommended
+                minimum: item.data.linux_requirements.minimum,
+                recommended: item.data.linux_requirements.recommended
             },
-            developers: item.developers,
-            publishers: item.publishers,
-            demos: item.demos,
-            price_overview: item.price_overview,
-            packages: item.packages,
-            platforms: item.platforms,
-            metacritic: item.metacritic,
-            recommendations: item.recommendations,
-            achievements : item.achievements,
-            release_date: item.release_date,
-            support_info: item.support_info,
-            background: item.background
+            developers: item.data.developers,
+            publishers: item.data.publishers,
+            demos: item.data.demos,
+            price_overview: item.data.price_overview,
+            packages: item.data.packages,
+            platforms: item.data.platforms,
+            metacritic: item.data.metacritic,
+            recommendations: item.data.recommendations,
+            achievements : item.data.achievements,
+            release_date: item.data.release_date,
+            support_info: item.data.support_info,
+            background: item.data.background
         }
     );
 
