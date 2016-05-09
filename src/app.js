@@ -1,12 +1,13 @@
 var express = require('express');
 var router = require('./router');
-//var dbConnection = require('./data-base-connector');
 var Core = require('./GameManager/core');
 
 var app = express();
-app.use('/', router);
 
-console.log("step1");
+app.use('/', router);
+app.use(express.static(__dirname + '/public'));
+
+/*console.log("step1");
 
 var CronJob = require('cron').CronJob;
 
@@ -18,7 +19,7 @@ var job = new CronJob(new Date(), function() {
   false,
   'America/Los_Angeles'
 );
-job.start();
+job.start();*/
 
 
 app.listen(8888);

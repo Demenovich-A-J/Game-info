@@ -1,0 +1,13 @@
+<div class="gameinfo-card mdl-card mdl-shadow--2dp" ng-repeat="app in apps">
+  <div class="mdl-card__title mdl-card--expand">
+    <h4>
+      {{app.name}}
+    </h4>
+  </div>
+  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+    href="#/gameDetail/{{app.appid}}">
+    Detailes
+  </a>
+</div>
+
+<div id="pagination"></div><br>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-ng-app="GameInfoApp">
+<head>
+    <title>Games info</title>
+
+    <!--Styles-->
+    <link rel="stylesheet" href="/content/css/material.min.css">
+    <link rel="stylesheet" href="/content/css/style.css">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="/content/css/materialize.css">
+
+    <!--Scripts-->
+    <script type="text/javascript" src="/scripts/jquery-1.10.2.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/scripts/jquery-te-1.4.0.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div class="gameinfo-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="gameinfo-title mdl-layout-title">
+              <h3 class="logo mdl-typography--text-uppercase">GAMES INFO</h2>
+          </span>
+          <div class="gameinfo-header-spacer mdl-layout-spacer"></div>
+          <div class="gameinfo-navigation-container">
+            <nav class="gameinfo-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#/games">Games</a>
+            </nav>
+          </div>
+        </div>
+    </div>
+    <main class="mdl-layout__content main-section">
+            <div data-ng-view="">
+            </div>
+    </main>
+  </div>
+</div>
+
+    <!-- 3rd party libraries -->
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/angular-route.min.js"></script>
+    <script src="/scripts/angular-local-storage.min.js"></script>
+    <script src="/scripts/material.min.js"></script>
+    <script src="/scripts/materialize-pagination.min.js"></script>
+
+    <!-- Load app main script -->
+    <script src="/app/app.js"></script>
+
+    <!-- Load services -->
+    <script src="/app/services/gameService.js"></script>
+    <!-- Load controllers -->
+    <script src="/app/controllers/allGamesController.js"></script>
+    <script src="app/controllers/gameDetailesController.js"></script>
+</body>
+</html>
