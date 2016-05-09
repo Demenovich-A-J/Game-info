@@ -44,7 +44,8 @@ ModelMapper.prototype.MappGameInfo = function(item) {
             achievements : item.data.achievements,
             release_date: item.data.release_date,
             support_info: item.data.support_info,
-            background: item.data.background
+            background: item.data.background,
+
         }
     );
 

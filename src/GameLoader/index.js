@@ -15,8 +15,11 @@ GamesInfoLoader.prototype.Load = function (path,callback) {
         response.on('end', function() {
             console.log('well done');
             body = Buffer.concat(body).toString();
-            callback(body);
+            callback(null,body);
         });
+    }).on('error', function(err) {
+        callback(err,null);
+        console.log("Got error: " + err.message);
     });
 };
 

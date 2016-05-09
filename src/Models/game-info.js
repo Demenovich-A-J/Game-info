@@ -85,26 +85,30 @@ var gameInfo = new Schema({
     },
     categories: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'category'
+            categoryId: String,
+            description: String,
         }
     ],
     genres: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'genre'
+            genreId: Number,
+            description: String,
         }
     ],
-    screenshots: [
+    screenshoots: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'screenshoot'
+            path_thumbnail: String,
+            path_full: String
         }
     ],
     movies: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'movie'
+            movieId: String,
+            name: String,
+            thumbnail: String,
+            480: String,
+            max: String,
+            highlight: Boolean,
         }
     ],
     recommendations: {
