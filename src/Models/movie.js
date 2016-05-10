@@ -9,7 +9,7 @@ var movie = new Schema({
     max: String,
     highlight: Boolean,
     _gameInfo : {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'GameInfo'
     }
 });

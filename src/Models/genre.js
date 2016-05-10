@@ -5,7 +5,7 @@ var genre = new Schema({
     genreId: Number,
     description: String,
     _gameInfo : {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'GameInfo'
     }
 });

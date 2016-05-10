@@ -5,7 +5,7 @@ var category = new Schema({
     categoryId: String,
     description: String,
     _gameInfo : {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'GameInfo'
     }
 });

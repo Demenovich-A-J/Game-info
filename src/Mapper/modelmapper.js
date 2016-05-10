@@ -3,6 +3,8 @@ var Movie = require('../Models/movie');
 var Category = require('../Models/category');
 var Screenshot = require('../Models/screenshot');
 var Genre = require('../Models/genre');
+var Comment = require('../Models/comment');
+
 
 function ModelMapper() {}
 
@@ -44,7 +46,8 @@ ModelMapper.prototype.MappGameInfo = function(item) {
             achievements : item.data.achievements,
             release_date: item.data.release_date,
             support_info: item.data.support_info,
-            background: item.data.background
+            background: item.data.background,
+
         }
     );
 
@@ -81,6 +84,18 @@ ModelMapper.prototype.MappGenre = function(item) {
         {
             genreId: item.id,
             description: item.description,
+        }
+    );
+
+    return genre;
+};
+
+ModelMapper.prototype.MappComment = function(item) {
+    var genre = Comment(
+        {
+            name: item.name,
+            description: item.name,
+            gameInfoId: item.gameInfoId
         }
     );
 
