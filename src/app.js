@@ -1,14 +1,15 @@
 var express = require('express');
 var router = require('./router');
 var Core = require('./GameManager/core');
+var bodyParser = require('body-parser')
 
 var app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', router);
 app.use(express.static(__dirname + '/public'));
 
-/*console.log("step1");
-
+/*
 var CronJob = require('cron').CronJob;
 
 var job = new CronJob(new Date(), function() {

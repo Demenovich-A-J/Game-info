@@ -4,8 +4,8 @@ app.controller('gameDetailesController', ['$scope', '$routeParams', 'gameService
          var gameId = $routeParams.gameId;
 
          gameService.getGameDetailes(gameId).then(function(result){
-             if(result[gameId].success){
-                 $scope.game = result[gameId].data;
+             if(result[0]._id){
+                 $scope.game = result[0];
              }
              else {
                  $scope.game = undefined;

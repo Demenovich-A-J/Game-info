@@ -1,7 +1,5 @@
 'use strict';
-app.factory('gameService', ['$http', 'ngGameInfoSettings', function ($http, ngGameInfoSettings) {
-
-    var serviceBase = ngGameInfoSettings.apiServiceBaseUri;
+app.factory('gameService', ['$http', function ($http, ngGameInfoSettings) {
 
     var gamesServiceFactory = {};
 

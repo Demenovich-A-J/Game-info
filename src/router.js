@@ -1,5 +1,8 @@
 var express = require('express');
 var GameLoader = require('./GameLoader');
+var GamesService = require('./Services/GameInfoService');
+var CommentsService = require('./Services/CommentService');
+
 var GameParser = require('./GameManager/gameParser');
 var router = express.Router();
 
@@ -11,32 +14,29 @@ router.get('/', function (req, res) {
 
 router.get('/AllGames', function(request, response){
 	var page = request.query.page - 1;
-	GameLoader.LoadAllGamesInfo(function(err,params){
-		if(GameParser.ChekJson(params))
-		{
-			var appsList = (JSON.parse(params)).applist.apps;
-
-			var responseData = {
-				apps : appsList.slice(page*10, (page*10)+10),
-				pages: appsList.length % 10 == 0 ? appsList.length / 10 : ((appsList.length - appsList.length%10) / 10)+1
-			};
-
-			response.json(responseData);
-		}else{
-			response.json(null);
-		}
-	});
+    GamesService.GetAllGames(function(result){
+        response.json(result);
+    }, page);
 });
 
 router.get('/GameInfo', function(request, response){
-	GameLoader.LoadGameInfoById(request.query.appid, function(err,params){
-		if(GameParser.ChekJson(params))
-		{
-			response.json(JSON.parse(params));
-		}else{
-			response.json(null);
-		}
-	});
+    GamesService.GetById(function(err, result){
+        response.json(result);
+    }, request.query.appid);
+});
+
+router.get('/Comments', function(request, response){
+    console.log(request.query.appid);
+    CommentsService.GetByGameInfoId(function(err, result){
+        response.json(result);
+    }, request.query.appid);
+});
+
+router.post('/AddComment', function(request, response){
+    console.log(request.body);
+    /*CommentsService.Add(function(err, result){
+        response.json(result);
+    }, request.body);*/
 });
 
 module.exports = router;

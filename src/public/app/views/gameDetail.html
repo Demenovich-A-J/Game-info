@@ -19,11 +19,11 @@
           <br/>
           <h3>Requirements</h3>
           <h4>Minimum: </h4><p>{{game.pc_requirements.minimum}}</p><br/>
-          <h4 ng-hide="game.pc_requirements.recommended===undefined">
+          <h4 ng-hide="game.pc_requirements.recommended===null">
               Recommended: </h4><p>{{game.pc_requirements.recommended}}</p><br/>
           <br/>
           <h3>Screenshots</h3>
-          <img ng-repeat="screenshot in game.screenshots" ng-src="{{screenshot.path_full}}" />
+          <img ng-repeat="screenshoot in game.screenshoots" ng-src="{{screenshoot.path_full}}" />
       </div>
     </div>
 </div>

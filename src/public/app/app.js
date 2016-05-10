@@ -10,6 +10,10 @@ app.config(function ($routeProvider) {
         controller: "gameDetailesController",
         templateUrl: "app/views/gameDetail.html"
     });
+    $routeProvider.when("/comments/:gameId/:gameName", {
+        controller: "commentController",
+        templateUrl: "app/views/comments.html"
+    });
     $routeProvider.otherwise({ redirectTo: "/games" });
 
 });

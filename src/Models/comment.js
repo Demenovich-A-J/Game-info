@@ -9,5 +9,5 @@ var comment = new Schema({
     gameInfoId: mongoose.Schema.Types.ObjectId
 });
 
-var Category = mongoose.model('Comment', comment);
-module.exports = comment;
+var Comment = mongoose.model('Comment', comment);
+module.exports = Comment;
