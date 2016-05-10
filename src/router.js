@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
 
 router.get('/AllGames', function(request, response){
 	var page = request.query.page - 1;
-	GameLoader.LoadAllGamesInfo(function(params){
+	GameLoader.LoadAllGamesInfo(function(err,params){
 		if(GameParser.ChekJson(params))
 		{
 			var appsList = (JSON.parse(params)).applist.apps;
