@@ -76,11 +76,101 @@ a img{
       border-bottom: 4px solid #8bc34a;
     }
 
-.gameinfo-card{
-    margin: 10px auto;
-    width: 80%;
-}
 
 main{
     background-color: rgb(243, 243, 243);
+}
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  font-size: 12px!important;
+  margin: 10px;
+  float: left;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+
+#pagination{
+    display: inline;
+    width: 100%;
+    float: left;
+}
+.app-name{
+    font-size: 14px!important;
+}
+
+.all-games-wrapper{
+    width: 91%;
+    display: inline-block;
+    margin: 0 auto;
+}
+.description{
+    float: left;
+    margin: 10px 0 10px 0;
+}
+
+.categories{
+    float: left;
+    margin: 10px 0 10px 0;
+}
+.botom-line{
+    float: left;
+    margin: 10px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+.headre-image{
+    float: left;
+    display: inline-block;
+    width: 50%;
+}
+.description-text{
+    float: right;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 47%;
+    color: #000;
+}
+
+.game-detail-wrapper{
+    width: 90%;
+    display: inline-block;
+    margin: 0 auto;
+}
+.game-detail-wrapper .mdl-card{
+    width: auto;
+}
+
+.mdl-button{
+    margin-left: 3px;
+}
+.screenshoots img{
+    display: inline-block;
+    width: 20%;
+}
+
+.coments-card-wrapper{
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
+}
+.coments-card-wrapper .mdl-card{
+    width: auto;
+}
+.input-wrapper{
+    margin: 5px;
+}
+.input-wrapper input,textarea{
+    width: 100%;
+}
+
+.input-wrapper label{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }

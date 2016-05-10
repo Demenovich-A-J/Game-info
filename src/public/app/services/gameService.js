@@ -5,14 +5,12 @@ app.factory('gameService', ['$http', function ($http, ngGameInfoSettings) {
 
     var _getAllGames = function (page) {
         return $http.get('AllGames?page=' + page).then(function (results) {
-            console.log(results);
             return results.data;
         });
     };
 
     var _getGameDetailes = function(id){
         return $http.get('GameInfo?appid=' + id).then(function (results) {
-            console.log(results);
             return results.data;
         });
     };

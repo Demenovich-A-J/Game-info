@@ -1,29 +1,45 @@
 <div ng-show="game===undefined">
     <h2 class="center-align">no detailes</h2>
 </div>
-<div ng-hide="game===undefined" class="center-align">
-    <div class="gameinfo-card mdl-card mdl-shadow--2dp">
+<div class="game-detail-wrapper" ng-hide="game===undefined">
+    <div class="mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text">{{game.name}}</h2>
+        <h1 style="border-bottom: 1px solid #ccc;" class="mdl-card__title-text">{{game.name}}</h1>
       </div>
       <div class="mdl-card__supporting-text">
-          <img ng-src="{{game.header_image}}"/>
-          <h3>About game</h3>
-          <p>{{game.detailed_description}}</p>
+          <div class="botom-line description">
+              <h1>About game</h1>
+              <img class="headre-image" ng-src="{{game.header_image}}"/>
+              <div class="description-text" ng-bind-html="getHtml(game.detailed_description)"></div>
+          </div>
+          <div class="botom-line categories">
+              <h3>Categories</h3>
+              <a href="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-repeat="category in game.categories">{{category.description}}</a>
+          </div>
+          <div class="botom-line genres">
+              <h3>Genres</h3>
+              <a href="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-repeat="genre in game.genres">{{genre.description}}</a>
+          </div>
+          <div class="botom-line aditional-info">
+              <h3>Requirements</h3>
+              <div ng-bind-html="getHtml(game.pc_requirements.minimum)"></div>
+              <br/>
+              <h4 ng-hide="game.pc_requirements.recommended===null">
+                  Recommended:
+              </h4>
+              <div ng-bind-html="getHtml(game.pc_requirements.recommended)"></div>
+              <br/>
+          </div>
+          <div class="botom-line screenshoots">
+              <h3>Screenshots</h3>
+              <img ng-repeat="screenshoot in game.screenshoots" ng-src="{{screenshoot.path_full}}" />
+          </div>
+
           <br/>
-          <h3>Categories</h3>
-          <p ng-repeat="category in game.categories">{{category.description}}</p>
+
           <br/>
-          <h3>Genres</h3>
-          <p ng-repeat="genre in game.genres">{{genre.description}}</p>
-          <br/>
-          <h3>Requirements</h3>
-          <h4>Minimum: </h4><p>{{game.pc_requirements.minimum}}</p><br/>
-          <h4 ng-hide="game.pc_requirements.recommended===null">
-              Recommended: </h4><p>{{game.pc_requirements.recommended}}</p><br/>
-          <br/>
-          <h3>Screenshots</h3>
-          <img ng-repeat="screenshoot in game.screenshoots" ng-src="{{screenshoot.path_full}}" />
+
+
       </div>
     </div>
 </div>

@@ -21,9 +21,8 @@ GameInfoService.prototype.GetBySteamAppId = function(callback,id) {
 };
 
 GameInfoService.prototype.GetAllGames = function(callback,page) {
-    GameInfo.find({}, 'name steam_appid', { skip: pageSize*page, limit: pageSize },
+    GameInfo.find({}, 'name steam_appid header_image', { skip: pageSize*page, limit: pageSize },
         function(err, models) {
-            console.log(models);
             GameInfo.count({}, function(err, count){
                 var responseData = {
     				apps : models,
