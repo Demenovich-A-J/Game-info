@@ -6,7 +6,7 @@ var comment = new Schema({
     description: String,
     createdOn: Date,
     modifiedOn: Date,
-    gameInfoId: mongoose.Schema.Types.ObjectId
+    gameInfoId: String
 });
 
 var Comment = mongoose.model('Comment', comment);

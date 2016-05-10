@@ -33,10 +33,8 @@ router.get('/Comments', function(request, response){
 });
 
 router.post('/AddComment', function(request, response){
-    console.log(request.body);
-    /*CommentsService.Add(function(err, result){
-        response.json(result);
-    }, request.body);*/
+    CommentsService.Add(request.body);
+    response.json();
 });
 
 module.exports = router;

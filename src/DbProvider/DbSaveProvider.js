@@ -28,7 +28,7 @@ DbSaveProvider.prototype.SaveComment = function (jsonObject){
 
       GameInfo.findOne({ _id : jsonObject._id },function (err, doc) {
             if (err)  console.log(err);
-
+            console.log(jsonObject);
             var comment = Mapper.MappComment(jsonObject);
 
             if(doc){
@@ -39,6 +39,7 @@ DbSaveProvider.prototype.SaveComment = function (jsonObject){
             }else{
                 comment.createdOn = Date.now();
                 comment.modifiedOn = Date.now();
+                console.log(comment);
                 comment.save(function (err,comment) {
                     if (err)  console.log(err);
                 })

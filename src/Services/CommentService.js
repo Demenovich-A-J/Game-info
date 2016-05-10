@@ -7,6 +7,7 @@ function CommentService() {}
 
 
 CommentService.prototype.Add = function(item) {
+    console.log(item);
     DbSaveProvider.SaveComment(item);
 };
 

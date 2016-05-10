@@ -91,15 +91,16 @@ ModelMapper.prototype.MappGenre = function(item) {
 };
 
 ModelMapper.prototype.MappComment = function(item) {
-    var genre = Comment(
+    console.log(item);
+    var comment = Comment(
         {
             name: item.name,
-            description: item.name,
+            description: item.description,
             gameInfoId: item.gameInfoId
         }
     );
-
-    return genre;
+    console.log(comment);
+    return comment;
 };
 
 ModelMapper.prototype.MappScreenshot = function(item) {
